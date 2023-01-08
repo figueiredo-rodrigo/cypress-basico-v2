@@ -5,11 +5,11 @@ describe('Central de Atendimento ao Cliente TAT', function () {
         cy.visit('/src/index.html')
     })
 
-    it('verifica o título da aplicação', function () {
+    it('Verifica o título da aplicação', function () {
         cy.title().should('be.equal', 'Central de Atendimento ao Cliente TAT')
     })
 
-    it('preencher os campos obrigatórios e envia o formulário', function () {
+    it('Preencher os campos obrigatórios e envia o formulário', function () {
         cy.clock()
         cy.get('#firstName').type('Rodrigo')
         cy.get('#lastName').type('Figueiredo')
@@ -21,7 +21,7 @@ describe('Central de Atendimento ao Cliente TAT', function () {
         cy.get('.success').should('not.be.visible')
     })
 
-    it('exibe mensagem de erro ao submeter o formulário com um email com formatação inválida', function () {
+    it('Exibe mensagem de erro ao submeter o formulário com um email com formatação inválida', function () {
         cy.clock()
         cy.get('#firstName').type('Rodrigo')
         cy.get('#lastName').type('Figueiredo')
@@ -144,7 +144,7 @@ describe('Central de Atendimento ao Cliente TAT', function () {
         cy.contains('Talking About Testing').should('be.visible')
     })
 
-    it('exibe e esconde as mensagens de sucesso e erro usando o .invoke', () => {
+    it('Exibe e esconde as mensagens de sucesso e erro usando o .invoke', () => {
         cy.get('.success')
             .should('not.be.visible')
             .invoke('show')
@@ -175,7 +175,7 @@ describe('Central de Atendimento ao Cliente TAT', function () {
         cy.get('.success').should('not.be.visible')
     })
 
-    it('faz uma requisição HTTP', function () {
+    it('Faz uma requisição HTTP', function () {
         cy.request('https://cac-tat.s3.eu-central-1.amazonaws.com/index.html')
             .should(function (response) {
                 const { status, statusText, body } = response
