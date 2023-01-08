@@ -5,11 +5,11 @@ describe('Central de Atendimento ao Cliente TAT', function () {
         cy.visit('/src/index.html')
     })
 
-    it('verifica o título da aplicação', function () {
+    it('Verifica o título da aplicação', function () {
         cy.title().should('be.equal', 'Central de Atendimento ao Cliente TAT')
     })
 
-    it('preencher os campos obrigatórios e envia o formulário', function () {
+    it('Preencher os campos obrigatórios e envia o formulário', function () {
         cy.clock()
         cy.get('#firstName').type('Rodrigo')
         cy.get('#lastName').type('Figueiredo')
@@ -21,7 +21,7 @@ describe('Central de Atendimento ao Cliente TAT', function () {
         cy.get('.success').should('not.be.visible')
     })
 
-    it('exibe mensagem de erro ao submeter o formulário com um email com formatação inválida', function () {
+    it('Exibe mensagem de erro ao submeter o formulário com um email com formatação inválida', function () {
         cy.clock()
         cy.get('#firstName').type('Rodrigo')
         cy.get('#lastName').type('Figueiredo')
